@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>AFONIL AUTO — автомобили с характером</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mobile.css" />
+</head>
+<body>
+  <header class="header" id="top">
+    <a href="#top" class="logo"><svg viewBox="0 0 48 24" aria-hidden="true"><path d="M3 17h42M9 17l3-7h20l6 7M14 10l4-5h10l4 5M7 20h3m28 0h3"/></svg><span>AFONIL <b>AUTO</b></span></a>
+    <nav><a href="#cars">Автомобили</a><a href="#catalog">Каталог</a><a href="#about">О компании</a><a href="#buy">Как купить</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    <div class="header-actions"><a class="phone" href="tel:+74951182371">+7 (495) 118-23-71</a><button class="button button-small modal-open">Заказать звонок</button></div>
+    <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div><div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow light">AFONIL AUTO · МОСКВА</p>
+        <h1>Автомобили, <em>которые хочется</em> водить</h1>
+        <p class="hero-lead">Подберите автомобиль под свой стиль, бюджет и задачи.</p>
+        <div class="hero-buttons"><a class="button button-light" href="#cars">Смотреть автомобили <span>↗</span></a><button class="text-button modal-open">Получить консультацию <span>→</span></button></div>
+      </div>
+      <div class="hero-caption"><span>01</span><i></i><span>Премиальный выбор</span></div>
+      <form class="search-panel" id="quick-search">
+        <label>Марка<select><option>Любая марка</option><option>BMW</option><option>Mercedes-Benz</option><option>Porsche</option></select></label>
+        <label>Модель<input placeholder="Например, X5" /></label>
+        <label>Цена от<input placeholder="1 000 000 ₽" /></label>
+        <label>Цена до<input placeholder="Не ограничена" /></label>
+        <label>Год<select><option>От 2020 года</option><option>От 2022 года</option><option>Новые</option></select></label>
+        <button class="button" type="submit">Найти автомобиль <span>→</span></button>
+      </form>
+    </section>
+
+    <section class="section cars-section" id="cars">
+      <div class="section-head reveal"><div><p class="eyebrow">ВЫБОР КЛИЕНТОВ</p><h2>Популярные<br><em>автомобили</em></h2></div><a class="under-link" href="#catalog">Все автомобили <span>→</span></a></div>
+      <div class="car-grid" id="popular-grid"></div>
+    </section>
+
+    <section class="catalog section dark-section" id="catalog">
+      <div class="section-head reveal"><div><p class="eyebrow light">В НАЛИЧИИ · 42 АВТОМОБИЛЯ</p><h2>Каталог<br><em>автомобилей</em></h2></div></div>
+      <div class="catalog-layout">
+        <aside class="filters reveal"><div class="filter-title">Подобрать автомобиль <button id="reset-filters">Сбросить</button></div>
+          <label>Марка<select id="brand-filter"><option value="">Любая марка</option><option>BMW</option><option>Mercedes-Benz</option><option>Audi</option><option>Toyota</option><option>Porsche</option></select></label>
+          <label>Модель<select><option>Любая модель</option></select></label>
+          <div class="filter-row"><label>Цена от<input type="number" placeholder="₽ от" /></label><label>до<input type="number" placeholder="₽ до" /></label></div>
+          <div class="filter-row"><label>Год от<select><option>Неважно</option><option>2024</option><option>2023</option></select></label><label>Пробег<select><option>Любой</option><option>до 50 000 км</option></select></label></div>
+          <label>Тип кузова<select><option value="">Любой</option><option>Седан</option><option>Кроссовер</option><option>Внедорожник</option><option>Купе</option><option>Универсал</option><option>Хэтчбек</option></select></label>
+          <label>Двигатель<select><option>Любой</option><option>Бензин</option><option>Дизель</option><option>Гибрид</option></select></label>
+          <div class="filter-row"><label>Коробка<select><option>Любая</option><option>Автомат</option></select></label><label>Привод<select><option>Любой</option><option>4WD</option></select></label></div>
+          <button class="button full" id="apply-filters">Показать 42 авто</button>
+        </aside>
+        <div class="catalog-content"><div class="catalog-bar"><span id="cars-count">42 автомобиля</span><label>Сортировка <select id="sort-cars"><option value="default">Сначала новые</option><option value="price">По цене</option><option value="year">По году</option><option value="mileage">По пробегу</option></select></label></div><div class="catalog-grid" id="catalog-grid"></div></div>
+      </div>
+    </section>
+
+    <section class="featured" id="about"><div class="featured-image"></div><div class="featured-info reveal"><p class="eyebrow">АВТОМОБИЛЬ ДНЯ</p><h2>BMW X5<br><em>xDrive40i</em></h2><p class="spec-line">2024 год <i></i> 18 500 км <i></i> 3.0 л <i></i> Автомат <i></i> 4WD</p><div class="featured-bottom"><div><small>Цена</small><strong>9 490 000 ₽</strong></div><button class="button modal-open">Получить предложение <span>↗</span></button></div></div></section>
+
+    <section class="section advantages"><div class="section-head reveal"><div><p class="eyebrow">НАШ ПОДХОД</p><h2>Почему <em>Afonil Auto</em></h2></div><p class="head-copy">Мы берём на себя всё, чтобы покупка автомобиля стала спокойным и предсказуемым решением.</p></div><div class="adv-grid">
+      <article class="adv reveal"><span>01</span><div class="adv-icon">✓</div><h3>Проверенные<br>автомобили</h3><p>Каждый автомобиль проходит техническую и юридическую проверку.</p></article>
+      <article class="adv reveal"><span>02</span><div class="adv-icon">⌁</div><h3>Прозрачная<br>история</h3><p>Предоставляем полную историю обслуживания и владения.</p></article>
+      <article class="adv reveal"><span>03</span><div class="adv-icon">↗</div><h3>Помощь с<br>оформлением</h3><p>Кредит, страхование, trade-in и постановка на учёт — в одном месте.</p></article>
+      <article class="adv reveal"><span>04</span><div class="adv-icon">◉</div><h3>Автомобили<br>в наличии</h3><p>Большинство представленных автомобилей уже ждут вас в салоне.</p></article>
+      <article class="adv reveal"><span>05</span><div class="adv-icon">✦</div><h3>Индивидуальный<br>подбор</h3><p>Найдём редкую комплектацию по вашим параметрам и бюджету.</p></article>
+    </div></section>
+
+    <section class="buy section dark-section" id="buy"><div class="section-head reveal"><div><p class="eyebrow light">ПРОСТОЙ ПУТЬ К ПОКУПКЕ</p><h2>Как проходит<br><em>покупка</em></h2></div></div><div class="steps"><article class="step reveal"><span>01</span><h3>Вы выбираете<br>автомобиль</h3><p>В салоне или онлайн — с помощью нашего эксперта.</p></article><article class="step reveal"><span>02</span><h3>Оставляете<br>заявку</h3><p>Бронируем автомобиль и согласовываем встречу.</p></article><article class="step reveal"><span>03</span><h3>Менеджер<br>связывается</h3><p>Отвечает на вопросы и готовит предложение.</p></article><article class="step reveal"><span>04</span><h3>Оформляете<br>покупку</h3><p>Забираете свой автомобиль в удобное время.</p></article></div></section>
+
+    <section class="section reviews" id="reviews"><div class="section-head reveal"><div><p class="eyebrow">МНЕНИЕ КЛИЕНТОВ</p><h2>Нам доверяют<br><em>важные решения</em></h2></div><div class="review-nav"><button>←</button><button>→</button></div></div><div class="review-grid"><article class="review reveal"><div class="stars">★★★★★</div><blockquote>«Искали семейный автомобиль без скрытых нюансов. Здесь всё показали, объяснили и оформили за один день. Очень спокойный и деликатный сервис.»</blockquote><footer><b>Алексей М.</b><span>Москва</span></footer></article><article class="review reveal featured-review"><div class="stars">★★★★★</div><blockquote>«Отличный сервис. Быстро помогли подобрать автомобиль, рассказали всю историю машины и организовали оформление. Рекомендую.»</blockquote><footer><b>Екатерина В.</b><span>Санкт-Петербург</span></footer></article><article class="review reveal"><div class="stars">★★★★★</div><blockquote>«Приехал за X5 после долгих поисков. Машина полностью соответствовала описанию, а процесс сделки занял меньше двух часов.»</blockquote><footer><b>Дмитрий С.</b><span>Москва</span></footer></article></div></section>
+
+    <section class="request"><div class="request-image"></div><div class="request-form reveal"><p class="eyebrow light">ИНДИВИДУАЛЬНЫЙ ПОДБОР</p><h2>Не нашли подходящий<br>автомобиль? <em>Мы найдём<br>его для вас.</em></h2><form id="selection-form"><div class="form-row"><label>Ваше имя<input required placeholder="Как к вам обращаться?" /></label><label>Телефон<input required type="tel" placeholder="+7 (___) ___-__-__" /></label></div><div class="form-row"><label>Какой автомобиль ищете?<input placeholder="Марка, модель, комплектация" /></label><label>Бюджет<input placeholder="Например, до 8 000 000 ₽" /></label></div><div class="form-action"><button class="button button-light" type="submit">Получить подбор <span>↗</span></button><small>Нажимая кнопку, вы соглашаетесь<br>с политикой конфиденциальности.</small></div></form></div></section>
+  </main>
+  <footer id="contacts"><div class="footer-top"><a href="#top" class="logo"><svg viewBox="0 0 48 24"><path d="M3 17h42M9 17l3-7h20l6 7M14 10l4-5h10l4 5M7 20h3m28 0h3"/></svg><span>AFONIL <b>AUTO</b></span></a><div class="footer-contact"><span>Свяжитесь с нами</span><a href="tel:+74951182371">+7 (495) 118-23-71</a></div><button class="button button-light modal-open">Заказать звонок</button></div><div class="footer-main"><div><p>Москва</p><p>Ежедневно 09:00–21:00</p></div><div class="map"><span>AFONIL<br>AUTO</span><i></i><small>Москва, Пресненская наб., 8</small></div><div class="social"><a href="#">Telegram ↗</a><a href="#">VK ↗</a><a href="#">WhatsApp ↗</a></div></div><div class="footer-bottom"><span>© 2025 Afonil Auto</span><a href="#">Политика конфиденциальности</a><span>Сделано с вниманием к деталям</span></div></footer>
+  <div class="modal" id="modal"><div class="modal-card"><button class="modal-close" aria-label="Закрыть">×</button><p class="eyebrow">AFONIL AUTO</p><h2>Оставьте контакты</h2><p>Менеджер перезвонит в течение 15 минут.</p><form id="callback-form"><input required placeholder="Ваше имя" /><input required type="tel" placeholder="Телефон" /><button class="button full">Жду звонка <span>→</span></button></form></div></div>
+  <div class="toast" id="toast">Спасибо! Мы скоро свяжемся с вами.</div>
+  <script src="script.js"></script>
+</body>
+</html>

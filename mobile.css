@@ -1,0 +1,14 @@
+@media (max-width: 700px) {
+  .header nav.mobile-nav {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background: #111;
+    border-top: 1px solid #333;
+  }
+}
